@@ -30,6 +30,7 @@ public class ProcedureHandler {
         try {
             count = Integer.parseInt(request.queryParam("count").orElse("1"));
         } catch (NumberFormatException e) {
+            e.printStackTrace();
         }
 
         List<Procedure> list = new ProcedureMaker(count, configProperties).make();

@@ -4,11 +4,15 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
 public class ProcedureDTO {
-  @Id private ObjectId id;
+  @JsonSerialize(using = ToStringSerializer.class)
+  @Id
+  private ObjectId id;
 
   private String title = "";
   private String description = "";
