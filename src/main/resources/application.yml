@@ -1,0 +1,16 @@
+server:
+  port: 54638
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27019
+      database: obsidian
+      username: obsidian
+      authentication-database: admin
+      password: 0bs1d1an!
+unboltsoft:
+  fake-description: fake
+  allowed-origins:
+    - http://localhost:8081
+    - chrome-extension://aejoelaoggembcahagimdiliamlcdmfm # Talend API Tester
