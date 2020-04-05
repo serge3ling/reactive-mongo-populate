@@ -8,6 +8,6 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
 public interface ProcedureRepository extends ReactiveMongoRepository<Procedure, ObjectId> {
-    @Query(value = "{'description': ?0}", delete = true)
-    public Mono<ServerResponse> deleteAll(String description);
+    @Query(value = "{'title': ?0}", delete = true)
+    public Mono<ServerResponse> deleteAll(String title);
 }

@@ -4,20 +4,24 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
 public class ProcedureDTO {
-  @Id private ObjectId id;
+  @JsonSerialize(using = ToStringSerializer.class)
+  @Id
+  private ObjectId id;
 
   private String title = "";
   private String description = "";
-  private List<String> tags = Collections.emptyList();
-  private List<String> steps = Collections.emptyList();
+  private List<Tag> tags = Collections.emptyList();
+  private List<ObjectId> steps = Collections.emptyList();
 
   public ProcedureDTO() {}
 
-  public ProcedureDTO(String title, String description, List<String> tags, List<String> steps) {
+  public ProcedureDTO(String title, String description, List<Tag> tags, List<ObjectId> steps) {
     this.title = title;
     this.description = description;
     this.tags = tags;
@@ -49,11 +53,11 @@ public class ProcedureDTO {
     return description;
   }
 
-  public List<String> getTags() {
+  public List<Tag> getTags() {
     return tags;
   }
 
-  public List<String> getSteps() {
+  public List<ObjectId> getSteps() {
     return steps;
   }
 }

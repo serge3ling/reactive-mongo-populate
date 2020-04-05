@@ -15,8 +15,8 @@ public class Procedure {
 
   private String title = "";
   private String description = "";
-  private List<String> tags = new ArrayList<>();
-  private List<String> steps = new ArrayList<>();
+  private List<Tag> tags = new ArrayList<>();
+  private List<ObjectId> steps = new ArrayList<>();
   private boolean inactive = Boolean.FALSE;
 
   public Procedure() {}
@@ -24,8 +24,8 @@ public class Procedure {
   public Procedure(
       @NonNull String title,
       @NonNull String description,
-      @NonNull List<String> tags,
-      @NonNull List<String> steps) {
+      @NonNull List<Tag> tags,
+      @NonNull List<ObjectId> steps) {
     this.title = title;
     this.description = description;
     this.tags = tags;
@@ -66,16 +66,16 @@ public class Procedure {
     return description;
   }
 
-  public List<String> getTags() {
+  public List<Tag> getTags() {
     return tags;
   }
 
-  public List<String> getSteps() {
+  public List<ObjectId> getSteps() {
     return steps;
   }
 
   @NonNull
-  private String listToString(List<String> list) {
+  private String listToString(List list) {
     StringBuilder builder = new StringBuilder("[");
 
     if (list != null) {

@@ -10,7 +10,7 @@ spring:
       authentication-database: admin
       password: 0bs1d1an!
 unboltsoft:
-  fake-description: fake
+  fake-title: fake
   allowed-origins:
     - http://localhost:8081
     - chrome-extension://aejoelaoggembcahagimdiliamlcdmfm # Talend API Tester
