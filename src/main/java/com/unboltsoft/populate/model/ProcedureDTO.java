@@ -16,12 +16,12 @@ public class ProcedureDTO {
 
   private String title = "";
   private String description = "";
-  private List<String> tags = Collections.emptyList();
-  private List<String> steps = Collections.emptyList();
+  private List<Tag> tags = Collections.emptyList();
+  private List<ObjectId> steps = Collections.emptyList();
 
   public ProcedureDTO() {}
 
-  public ProcedureDTO(String title, String description, List<String> tags, List<String> steps) {
+  public ProcedureDTO(String title, String description, List<Tag> tags, List<ObjectId> steps) {
     this.title = title;
     this.description = description;
     this.tags = tags;
@@ -53,11 +53,11 @@ public class ProcedureDTO {
     return description;
   }
 
-  public List<String> getTags() {
+  public List<Tag> getTags() {
     return tags;
   }
 
-  public List<String> getSteps() {
+  public List<ObjectId> getSteps() {
     return steps;
   }
 }

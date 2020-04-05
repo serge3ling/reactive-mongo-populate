@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "unboltsoft")
 public class ConfigProperties {
   List<String> allowedOrigins;
-  String fakeDescription;
+  String fakeTitle;
 
   public List<String> getAllowedOrigins() {
     return allowedOrigins;
@@ -18,11 +18,11 @@ public class ConfigProperties {
     this.allowedOrigins = allowedOrigins;
   }
 
-  public String getFakeDescription() {
-    return fakeDescription;
+  public String getFakeTitle() {
+    return fakeTitle;
   }
 
-  public void setFakeDescription(String fakeDescription) {
-    this.fakeDescription = fakeDescription;
+  public void setFakeTitle(String fakeTitle) {
+    this.fakeTitle = fakeTitle;
   }
 }

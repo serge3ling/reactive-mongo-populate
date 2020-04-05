@@ -19,6 +19,7 @@ public class ProcedureRouter {
     public RouterFunction<ServerResponse> route() {
         return RouterFunctions
                 .route(RequestPredicates.GET("/insert"), procedureHandler::insertProcedures)
-                .andRoute(RequestPredicates.GET("/delete"), procedureHandler::deleteProcedures);
+                .andRoute(RequestPredicates.GET("/delete"), procedureHandler::deleteProcedures)
+                .andRoute(RequestPredicates.GET("/"), procedureHandler::welcome);
     }
 }
